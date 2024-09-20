@@ -9,4 +9,34 @@ This dataset was acquired from kaggle, it has been obtained from IMDB and TMDB T
 It has over a million rows and 42 features
 
 ## Methodologies
+It is a NLP task
 Hybrid approach: combines collaborative and content-based filtering for more accurate recommendations by leveraging the strengths of both methods.
+
+## NLP Pipeline:
+### Acquisition of data
+
+### Text Extraction and clean up
+ Spelling correction
+ Removing irrelevant information
+ Removing extra line breaks
+
+### Preprocessing
+Sentence Segmentation
+Tokenization
+Lemmatization
+Stemming 
+Ner
+Lower Case Conversion
+
+### Feature Engineering
+Converting texts to numbers
+TF -IDF Vectorizer 
+Word Embedding
+
+### Model Building
+
+### Evaluation
+Hyperparameter tuning
+Error Analysis
+
+### Deployment
