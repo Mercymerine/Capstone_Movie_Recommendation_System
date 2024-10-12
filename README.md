@@ -123,11 +123,18 @@ Parameters: Determines the number of neighbors to return and the precision of th
 
 ## Precision:
 
-Definition: The proportion of relevant results among all the retrieved results.
+Definition: The proportion of relevant results(recommended items) among all the retrieved results.
+Formula: \[ \text{Precision} = \frac{\text{Number of relevant items retrieved}}{\text{Total number of items retrieved}} \]
+If your recommendation system suggests 10 articles, and 7 of them are relevant to the user's query, your precision is 0.7 (70%).
+Precision is important when you want to ensure that the items recommended are actually relevant to the user’s interests. High precision means fewer irrelevant results.
 
 ## Recall:
 
 Definition: The proportion of relevant results retrieved compared to all relevant results.
+Formula: \[ \text{Recall} = \frac{\text{Number of relevant items retrieved}}{\text{Total number of relevant items available}} \]
+If there are 20 relevant articles in the entire dataset, and your system retrieves 10 of them, your recall is 0.5 (50%).
+Recall is crucial when you want to capture as many relevant items as possible. High recall means that most of the relevant results are retrieved.
+It calculates the number of relevant articles among the results and divides it by the total number of relevant articles available.
 
 ## F1 Score:
 
