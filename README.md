@@ -107,7 +107,7 @@ Batch Processing: Preferred in NLP pipelines for transforming large datasets eff
 
 Faiss:
 
-What it is: A library for efficient similarity search and clustering of dense vectors.
+What it is: FAISS is a tool developed by Facebook AI Research (FAIR) to quickly find similar items in large collections of data. A library for efficient similarity search and clustering of dense vectors.
 
 Why it’s used: Faster than cosine similarity, handles large datasets efficiently.
 
