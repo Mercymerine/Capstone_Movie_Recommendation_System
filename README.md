@@ -1,42 +1,152 @@
-# Capstone_Movie_Recommendation_System
-Creating a movie recommendation using nlp to recommend movies based on one's preference
 
+
+## Capstone Project: News Recommendation System
+
+ 
 ## Problem Statement
-There are over a million movies. How can I easily get a movie to watch?
 
-## Data Source
-This dataset was acquired from kaggle, it has been obtained from IMDB and TMDB This is the link: https://www.kaggle.com/datasets/shubhamchandra235/imdb-and-tmdb-movie-metadata-big-dataset-1m. 
-It has over a million rows and 42 features
+With the vast amount of news articles published daily, how can we efficiently recommend relevant news?
 
-## Methodologies
-It is a NLP task
-Hybrid approach: combines collaborative and content-based filtering for more accurate recommendations by leveraging the strengths of both methods.
+## Why Choose This System:
 
-## NLP Pipeline:
-### Acquisition of data
+Enhanced Personalization: Unlike traditional news recommendation systems that rely heavily on user behavior data, our system focuses on the content itself, allowing for precise and personalized recommendations from the start.
 
-### Text Extraction and clean up
- Spelling correction
- Removing irrelevant information
- Removing extra line breaks
+ Real-Time Updates: By using RSS feeds, our system captures news articles as they are published, ensuring the most up-to-date information is available for recommendation.
 
-### Preprocessing
+Scalability: Capable of handling increasing volumes of data efficiently, making it suitable for growing and diverse news sources.
+
+ Adaptability: Able to recommend new and niche articles without relying on popularity metrics, providing a balanced view of news.
+
+## Data Sources and Data Acquisition
+
+Using RSS (Really Simple Syndication)
+
+## Why RSS?
+Ease of Access: Provides structured content in XML/JSON format without complex parsing.
+
+Efficiency: Delivers real-time updates as content is published, reducing the need for frequent polling.
+
+Structured Data: Provides consistent data, making extraction easier without worrying about site layout changes.
+
+No Authentication Required: Most RSS feeds are publicly accessible, without the need for authentication.
+
+Automatic Updates: Users can subscribe to RSS feeds for automatic content updates.
+
+Lower Legal Risk: Intended for public distribution, reducing legal concerns compared to web scraping.
+
+## Methodologies Used
+
+Content-Based Filtering
+
+Advantages:
+
+No Cold Start: Handles new/niche articles immediately.
+
+Personalized from the Start: Uses article content for recommendations.
+
+Scalable: Efficient as it grows with more news articles.
+
+Advantages for News Recommendation:
+
+No Need for User Data: Recommends based on article content, not user behavior.
+
+Highly Relevant Recommendations: Driven by the similarity of the articles' content.
+
+Personalization from Limited User Input: Personalized recommendations with minimal interaction.
+
+Adaptable to New/Unpopular Items: Recommends new/niche articles without relying on popularity.
+
+Scalability: Efficient with growing datasets, focused on article features.
+
+## Preprocessing Steps Involved in NLP
+
+Text Preprocessing Using spaCy
+
 Sentence Segmentation
+
 Tokenization
+
 Lemmatization
-Stemming 
-Ner
+
+Stemming
+
+Named Entity Recognition (NER)
+
 Lower Case Conversion
 
-### Feature Engineering
-Converting texts to numbers
-TF -IDF Vectorizer 
-Word Embedding
+## Text Representation and Feature Engineering
+Methods include: 
+1. Bag of words: Simple, easy to implement bu it ignores word order and context
+2. Word Embeddings (Word2Vec, GloVe): Captures semantic meaning and relationships
+ but it is computationally intensive, complex to interpret
+TF-IDF Vectorizer
 
-### Model Building
+Formula: $$\text{tf-idf}(t,d) = \text{tf}(t,d) \times \text{idf}(t)$$
 
-### Evaluation
-Hyperparameter tuning
-Error Analysis
+Explanation:
 
-### Deployment
+tf (term frequency): How frequently a term appears in a document.
+
+idf (inverse document frequency): Reduces the weight of terms that appear in many documents.
+
+## Why TF-IDF?
+
+Simplicity and Effectiveness: Balances term frequency and inverse document frequency, providing a more nuanced representation of text.
+
+Reduces Overfitting: By reducing the impact of commonly occurring words, it helps prevent overfitting in the model.
+
+Interpretability: Easier to understand and explain compared to more complex text representation methods like neural embeddings.
+
+## Combining Headline and Text
+
+List of Strings: Suitable for NLP because it maintains the integrity of individual text items, making processing more efficient.
+
+Batch Processing: Preferred in NLP pipelines for transforming large datasets efficiently.
+
+## Model Building Using Faiss
+
+Faiss:
+
+What it is: A library for efficient similarity search and clustering of dense vectors.
+
+Why it’s used: Faster than cosine similarity, handles large datasets efficiently.
+
+How it works:
+
+Index: Structures the vectors for efficient querying.
+
+Search: Finds the nearest vectors to a given query vector.
+
+Parameters: Determines the number of neighbors to return and the precision of the search.
+
+## Evaluation Metrics
+
+## Precision:
+
+Definition: The proportion of relevant results among all the retrieved results.
+
+## Recall:
+
+Definition: The proportion of relevant results retrieved compared to all relevant results.
+
+## F1 Score:
+
+Definition: Harmonic mean of precision and recall.
+
+Formula: $$\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
+
+## Deployment
+
+Using Streamlit for deployment
+
+Easy, interactive web-based interface for users to interact with the recommendation system.
+
+## Conclusion
+
+Developed a news recommendation system using NLP and content based approach.
+
+Data sourced from RSS feeds.
+
+Deployed using Streamlit for user-friendly interaction.
+
+
